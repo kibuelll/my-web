@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import ThreeBackground from "@/components/ThreeBackground";
 import ContactForm from "@/components/ContactForm";
 import ProjectModal from "@/components/ProjectModal";
-import { ExternalLink, Mail, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
@@ -15,24 +15,35 @@ export default function Home() {
       title: "HANUDNAS & KODIKLATAL",
       role: "Frontend Web Developer",
       description: "Membangun website untuk sistem manajemen data yang terintegrasi secara langsung dengan fitur video conference menggunakan Jitsi.",
+      active: true,
       techStack: ["Vue 2", "Nuxt 2", "Jitsi"],
     },
     {
       title: "SMARTFARMING",
       role: "Frontend Web Developer",
       description: "Pengembangan website khusus untuk dasbor admin (admin side) guna memfasilitasi pemantauan dan manajemen data secara real-time.",
+      active: true,
       techStack: ["Next.js", "Ant Design", "Tailwind CSS"],
     },
     {
       title: "NAGITEC",
       role: "Frontend Web Developer",
       description: "Membangun website untuk manajemen data terpadu dan sistem penyewaan internal (internal rent system) perusahaan.",
+      active: true,
+      techStack: ["Next.js", "Ant Design", "Tailwind CSS"],
+    },
+    {
+      title: "PERJADIN | BANK TANAH",
+      role: "Frontend Web Developer",
+      description: "Membangun website admin manjaemen perjalann dinas dan surat menyurat lembaga bank tanah.",
+      active: true,
       techStack: ["Next.js", "Ant Design", "Tailwind CSS"],
     },
     {
       title: "C-Art (Web Application)",
       role: "Fullstack / Frontend Developer",
       description: "Mengembangkan marketplace untuk jual beli item seni digital yang dilengkapi dengan fitur networking real-time.",
+      active: false,
       techStack: ["ReactJS", "NodeJS", "PostgreSQL", "Socket.io", "AWS EC2", "Firebase"],
       link: "https://github.com/orgs/C-Art-team/repositories",
     },
@@ -40,6 +51,7 @@ export default function Home() {
       title: "Rent-me App (Web Application)",
       role: "Fullstack / Frontend Developer",
       description: "Merancang dan membangun aplikasi kencan (dating app) interaktif dengan fitur real-time chat yang responsif.",
+      active: false,
       techStack: ["Vue.js", "NodeJS", "PostgreSQL", "Railway", "Supabase", "Firebase"],
       link: "https://github.com/kibuelll/p2-iproject-rent-me",
     },
@@ -64,7 +76,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-7xl font-bold font-outfit tracking-tighter mb-6"
         >
-          Halo, Saya seorang <br /> <span className="text-gradient">Frontend Developer</span>
+          Ginanjar Saiful Ihsan <br /> <span className="text-gradient">Frontend Developer</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -97,20 +109,20 @@ export default function Home() {
           <div className="absolute -top-16 -left-8 md:-left-16 text-9xl text-white/5 font-outfit font-bold select-none pointer-events-none">
             "
           </div>
-          
+
           <div className="space-y-8 relative z-10">
             <p className="text-2xl md:text-4xl font-outfit font-light leading-snug text-gray-200">
-              Menyatukan <span className="font-bold text-gradient">pola pikir analitis</span> dengan kreativitas digital untuk membangun antarmuka web yang luar biasa.
+              Menyatukan <span className="font-bold text-gradient">logika pemrograman</span> dengan kreativitas digital untuk membangun antarmuka web yang luar biasa.
             </p>
-            
+
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-            
+
             <div className="grid md:grid-cols-2 gap-8 text-gray-400 text-lg leading-relaxed">
               <div>
-                Saya memulai perjalanan profesional saya dengan gelar <span className="text-white font-medium">Sarjana Akuntansi</span>, sebelum akhirnya menemukan panggilan sejati saya di dunia rekayasa perangkat lunak melalui program <span className="text-white font-medium">Bootcamp Hacktiv8</span> (Fullstack JavaScript).
+                Ketertarikan saya dalam memecahkan masalah logika membawa saya terjun ke dunia rekayasa perangkat lunak, yang semakin terasah setelah menyelesaikan program intensif di <span className="text-white font-medium">Bootcamp Hacktiv8</span> (Fullstack JavaScript).
               </div>
               <div>
-                Kini, fokus saya adalah merancang <span className="text-white font-medium">sistem manajemen data yang kompleks</span> dan efisien. Saya selalu bersemangat mengeksplorasi tech-stack modern demi menciptakan pengalaman <span className="text-gradient font-semibold">UI/UX yang seamless</span> dan responsif.
+                Kini, fokus utama saya adalah merancang <span className="text-white font-medium">sistem manajemen data yang kompleks</span> dan efisien. Saya selalu bersemangat mengeksplorasi tech-stack modern demi menciptakan pengalaman <span className="text-gradient font-semibold">UI/UX yang seamless</span> dan responsif.
               </div>
             </div>
           </div>
@@ -137,7 +149,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="glass-card px-6 py-3 text-sm font-medium hover:-translate-y-1 hover:border-primary/50 transition-all cursor-default"
+              className="glass-card px-6 py-3 text-sm font-medium hover:-translate-y-1 hover:shadow-sm hover:shadow-secondary  hover:border-secondary/50 transition-all cursor-default"
             >
               {tech}
             </motion.div>
@@ -172,7 +184,7 @@ export default function Home() {
                 <ArrowRight className="text-primary" size={20} />
               </div>
 
-              <h3 className="text-2xl font-bold font-outfit mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+              <h3 className="text-2xl font-bold font-outfit mb-2 group-hover:text-secondary transition-colors">{project.title}</h3>
               <p className="text-sm text-primary mb-4">{project.role}</p>
 
               <p className="text-gray-400 mb-6 flex-grow line-clamp-3">

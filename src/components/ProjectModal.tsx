@@ -9,6 +9,7 @@ interface Project {
   description: string;
   techStack: string[];
   link?: string;
+  active?: boolean;
 }
 
 export default function ProjectModal({ project, onClose }: { project: Project | null, onClose: () => void }) {
@@ -63,18 +64,32 @@ export default function ProjectModal({ project, onClose }: { project: Project | 
               </div>
             </div>
 
-            {project.link && (
-              <div className="pt-4 border-t border-white/10">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 hover:bg-primary/20 text-primary rounded-xl font-medium transition-colors border border-primary/20"
-                >
-                  <Code size={18} />
-                  Lihat Repositori
-                  <ExternalLink size={16} />
-                </a>
+            {(project.link || project.active === false) && (
+              <div className="pt-6 mt-4 border-t border-white/10 flex items-center justify-between flex-wrap gap-4">
+                {project.link ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary/10 hover:bg-primary/20 text-primary rounded-xl font-medium transition-colors border border-primary/20"
+                  >
+                    <Code size={18} />
+                    Lihat Repositori
+                    <ExternalLink size={16} />
+                  </a>
+                ) : (
+                  <div></div>
+                )}
+
+                {project.active === false && (
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/10 text-red-400 border border-red-500/20 rounded-xl text-xs font-semibold tracking-widest shadow-[0_0_15px_rgba(239,68,68,0.15)]">
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+                    </span>
+                    DEPRECATED
+                  </div>
+                )}
               </div>
             )}
           </div>
