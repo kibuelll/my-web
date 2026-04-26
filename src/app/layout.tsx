@@ -5,11 +5,15 @@ import "./globals.css";
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
+  display: "swap", // Prevents render-blocking — shows fallback font immediately
+  preload: true,
 });
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
   subsets: ["latin"],
+  display: "swap", // Prevents render-blocking — shows fallback font immediately
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -67,6 +71,13 @@ export default function RootLayout({
       lang="id"
       className={`${outfit.variable} ${jakarta.variable} antialiased`}
     >
+      <head>
+        {/* Preconnect to Google Fonts CDN to reduce latency */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Preconnect to placehold.co for placeholder images */}
+        <link rel="preconnect" href="https://placehold.co" />
+      </head>
       <body className="min-h-screen text-foreground bg-background font-jakarta">{children}</body>
     </html>
   );
