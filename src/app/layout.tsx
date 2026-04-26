@@ -61,6 +61,8 @@ export const metadata: Metadata = {
   },
 };
 
+import MotionProvider from "@/components/MotionProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -78,7 +80,11 @@ export default function RootLayout({
         {/* Preconnect to placehold.co for placeholder images */}
         <link rel="preconnect" href="https://placehold.co" />
       </head>
-      <body className="min-h-screen text-foreground bg-background font-jakarta">{children}</body>
+      <body className="min-h-screen text-foreground bg-background font-jakarta">
+        <MotionProvider>
+          {children}
+        </MotionProvider>
+      </body>
     </html>
   );
 }

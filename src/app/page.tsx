@@ -1,12 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import ProjectModal from "@/components/ProjectModal";
 
-// Lazy load heavy components
+// Lazy load heavy components — only loaded when needed
 const ThreeBackground = dynamic(() => import("@/components/ThreeBackground"), { ssr: false });
-const GitLabCalendar = dynamic(() => import("@/components/GitlabActivity"), { ssr: false, loading: () => <div className="h-64 flex items-center justify-center text-gray-500">Memuat data aktivitas...</div> });
+const GitLabCalendar = dynamic(() => import("@/components/GitlabActivity"), {
+  ssr: false,
+  loading: () => <div className="h-64 flex items-center justify-center text-gray-500">Memuat data aktivitas...</div>
+});
 
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -18,10 +21,18 @@ import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    // Only enable Three.js WebGL background on desktop (>= 768px)
+    // Mobile GPUs struggle with WebGL and it's the main thread blocker
+    setIsDesktop(window.innerWidth >= 768);
+  }, []);
 
   return (
     <main className="min-h-screen selection:bg-primary selection:text-white relative">
-      <ThreeBackground />
+      {/* Render 3D background only on desktop to save mobile main thread */}
+      {isDesktop && <ThreeBackground />}
 
       <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
 
@@ -40,7 +51,6 @@ export default function Home() {
       </section>
 
       <TestimonialSection />
-
 
       <ContactSection />
 
