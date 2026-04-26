@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, m } from "framer-motion";
 import Image from "next/image";
 import { X, ExternalLink, Code, Briefcase, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -44,14 +44,14 @@ export default function ProjectModal({ project, onClose }: { project: Project | 
 
   return (
     <AnimatePresence>
-      <motion.div
+      <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={onClose}
         className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
       >
-        <motion.div
+        <m.div
           initial={{ y: 50, opacity: 0, scale: 0.95 }}
           animate={{ y: 0, opacity: 1, scale: 1 }}
           exit={{ y: 50, opacity: 0, scale: 0.95 }}
@@ -75,7 +75,7 @@ export default function ProjectModal({ project, onClose }: { project: Project | 
           {/* Fancy Carousel Section */}
           <div className="relative w-full aspect-video mb-8 rounded-xl overflow-hidden group bg-black/40 border border-white/5 shadow-inner flex items-center justify-center">
             <AnimatePresence mode="wait">
-              <motion.div
+              <m.div
                 key={currentImageIndex}
                 initial={{ opacity: 0, scale: 1.02 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -96,7 +96,7 @@ export default function ProjectModal({ project, onClose }: { project: Project | 
                   className="object-contain"
                   unoptimized={imageError[currentImageIndex]} // Skip optimization for placehold.co external SVGs
                 />
-              </motion.div>
+              </m.div>
             </AnimatePresence>
 
             {/* Carousel Controls */}
@@ -169,8 +169,8 @@ export default function ProjectModal({ project, onClose }: { project: Project | 
               </div>
             )}
           </div>
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </AnimatePresence>
   );
 }

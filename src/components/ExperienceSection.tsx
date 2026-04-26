@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Briefcase, Calendar } from "lucide-react";
 
 export default function ExperienceSection() {
@@ -27,7 +27,7 @@ export default function ExperienceSection() {
 
   return (
     <section id="experience" className="py-20 px-6 max-w-5xl mx-auto relative overflow-hidden">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -36,7 +36,7 @@ export default function ExperienceSection() {
       >
         <h2 className="text-3xl md:text-4xl font-bold font-outfit mb-4 text-white">Perjalanan Karir</h2>
         <p className="text-gray-400">Pengalaman kerja dan latar belakang pendidikan saya.</p>
-      </motion.div>
+      </m.div>
 
       <div className="relative">
         {/* Vertical Line */}
@@ -46,7 +46,7 @@ export default function ExperienceSection() {
           {experiences.map((exp, index) => {
             const isEven = index % 2 === 0;
             return (
-              <motion.div
+              <m.div
                 key={exp.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ export default function ExperienceSection() {
                     <p className="text-gray-300 text-sm leading-relaxed">{exp.description}</p>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Quote, Star } from "lucide-react";
 import Image from "next/image";
 
@@ -31,7 +31,7 @@ export default function TestimonialSection() {
 
   return (
     <section id="testimonials" className="py-20 px-6 max-w-6xl mx-auto overflow-hidden">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -39,11 +39,11 @@ export default function TestimonialSection() {
         className="text-center mb-20"
       >
         <h2 className="text-3xl md:text-4xl font-bold font-outfit mb-4 text-white">Testimoni</h2>
-      </motion.div>
+      </m.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
         {testimonials.map((testi, index) => (
-          <motion.div
+          <m.div
             key={testi.id}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ export default function TestimonialSection() {
                 <p className="text-secondary text-xs mt-0.5">{testi.role}</p>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </section>

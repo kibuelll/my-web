@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 export default function ProjectsSection({ setSelectedProject }: { setSelectedProject: (val: any) => void }) {
@@ -75,7 +75,7 @@ export default function ProjectsSection({ setSelectedProject }: { setSelectedPro
 
   return (
     <section className="py-20 px-6 max-w-6xl mx-auto">
-      <motion.div
+      <m.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -83,11 +83,11 @@ export default function ProjectsSection({ setSelectedProject }: { setSelectedPro
       >
         <h2 className="text-3xl md:text-4xl font-bold font-outfit mb-4">Portofolio</h2>
         <p className="text-gray-400">Proyek profesional dan personal yang pernah saya kerjakan.</p>
-      </motion.div>
+      </m.div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, i) => (
-          <motion.div
+          <m.div
             key={project.title}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -119,7 +119,7 @@ export default function ProjectsSection({ setSelectedProject }: { setSelectedPro
                 </span>
               )}
             </div>
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </section>
