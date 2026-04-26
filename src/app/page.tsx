@@ -1,14 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import ThreeBackground from "@/components/ThreeBackground";
+import dynamic from "next/dynamic";
 import ProjectModal from "@/components/ProjectModal";
-import GitLabCalendar from "@/components/GitlabActivity";
+
+// Lazy load heavy components
+const ThreeBackground = dynamic(() => import("@/components/ThreeBackground"), { ssr: false });
+const GitLabCalendar = dynamic(() => import("@/components/GitlabActivity"), { ssr: false, loading: () => <div className="h-64 flex items-center justify-center text-gray-500">Memuat data aktivitas...</div> });
 
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import ExperienceSection from "@/components/ExperienceSection";
 import TechStackSection from "@/components/TechStackSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import TestimonialSection from "@/components/TestimonialSection";
 import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
@@ -24,6 +29,8 @@ export default function Home() {
 
       <AboutSection />
 
+      <ExperienceSection />
+
       <TechStackSection />
 
       <ProjectsSection setSelectedProject={setSelectedProject} />
@@ -31,6 +38,9 @@ export default function Home() {
       <section id="gitlab" className="py-20 px-6 max-w-3xl mx-auto pb-32">
         <GitLabCalendar />
       </section>
+
+      <TestimonialSection />
+
 
       <ContactSection />
 

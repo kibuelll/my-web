@@ -35,8 +35,6 @@ export async function GET() {
         }
       );
 
-      console.log(response, "=-=-=-=-")
-
       if (!response.ok) {
         throw new Error(`GitLab API error: ${response.status}`);
       }

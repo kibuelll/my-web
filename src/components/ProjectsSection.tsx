@@ -30,6 +30,22 @@ export default function ProjectsSection({ setSelectedProject }: { setSelectedPro
       key: "nagitec",
     },
     {
+      title: "Kalaras Prima Landing",
+      role: "Frontend Web Developer",
+      description: "Membangun website landing page yayasan",
+      active: true,
+      techStack: ["Next.js", "Ant Design", "Tailwind CSS"],
+      key: "ykpa",
+    },
+    {
+      title: "Gerakan Solidaritas Nasional",
+      role: "Frontend Web Developer",
+      description: "Membangun website landing page yayasan",
+      active: true,
+      techStack: ["Next.js", "Tailwind CSS"],
+      key: "ygsn",
+    },
+    {
       title: "PERJADIN | BANK TANAH",
       role: "Frontend Web Developer",
       description: "Membangun website admin manajemen perjalanan dinas dan surat menyurat lembaga bank tanah.",
