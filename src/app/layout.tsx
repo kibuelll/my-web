@@ -73,13 +73,6 @@ export default function RootLayout({
       lang="id"
       className={`${outfit.variable} ${jakarta.variable} antialiased`}
     >
-      <head>
-        {/* Preconnect to Google Fonts CDN to reduce latency */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Preconnect to placehold.co for placeholder images */}
-        <link rel="preconnect" href="https://placehold.co" />
-      </head>
       <body className="min-h-screen text-foreground bg-background font-jakarta">
         <MotionProvider>
           {children}
