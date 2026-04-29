@@ -9,7 +9,7 @@ export default function TechStackSection() {
   ];
 
   return (
-    <section id="stack" className="py-20 px-6 max-w-5xl mx-auto">
+    <section id="stack" className="py-32 px-6 max-w-5xl mx-auto">
       <m.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

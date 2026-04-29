@@ -4,7 +4,7 @@ import { motion, m } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 px-6 max-w-4xl mx-auto">
+    <section id="about" className="py-36 px-6 max-w-4xl mx-auto">
       <m.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

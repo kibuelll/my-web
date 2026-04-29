@@ -74,7 +74,7 @@ export default function ProjectsSection({ setSelectedProject }: { setSelectedPro
   ];
 
   return (
-    <section id="projects" className="py-20 px-6 max-w-6xl mx-auto">
+    <section id="projects" className="py-32 px-6 max-w-6xl mx-auto">
       <m.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
