@@ -86,20 +86,21 @@ export default function Navbar() {
           >
             <div className="bg-black/90 backdrop-blur-2xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
               {navLinks.map((link, i) => (
-                <m.a
+                <m.div
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                   key={link.name}
-                  href={link.href}
-                  onClick={(e) => {
-                    setMobileMenuOpen(false)
-                  }}
-                  className="flex items-center gap-4 px-6 py-4 text-gray-300 hover:bg-white/5 hover:text-white border-b border-white/5 last:border-0 transition-colors"
                 >
-                  <link.icon size={18} className="text-primary" />
-                  <span className="font-medium">{link.name}</span>
-                </m.a>
+                  <Link
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-4 px-6 py-4 text-gray-300 hover:bg-white/5 hover:text-white border-b border-white/5 last:border-0 transition-colors"
+                  >
+                    <link.icon size={18} className="text-primary" />
+                    <span className="font-medium text-lg">{link.name}</span>
+                  </Link>
+                </m.div>
               ))}
               <div className="p-6">
                 <a

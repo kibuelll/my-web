@@ -49,14 +49,14 @@ export default function ProjectModal({ project, onClose }: { project: Project | 
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={onClose}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+        className="fixed inset-0 inset-y-28 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
       >
         <m.div
           initial={{ y: 50, opacity: 0, scale: 0.95 }}
           animate={{ y: 0, opacity: 1, scale: 1 }}
           exit={{ y: 50, opacity: 0, scale: 0.95 }}
           onClick={(e) => e.stopPropagation()}
-          className="relative w-full max-w-2xl bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto custom-scrollbar"
+          className="relative w-full max-w-2xl bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl overflow-hidden mt-12 max-h-[80vh] overflow-y-auto custom-scrollbar"
         >
           <button
             onClick={onClose}

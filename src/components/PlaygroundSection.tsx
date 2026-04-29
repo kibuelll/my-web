@@ -414,14 +414,15 @@ export default function PlaygroundSection() {
           className="mt-16 bg-white/[0.02] border border-white/5 rounded-2xl p-8"
         >
           <div className="flex items-center justify-between mb-8">
-            <h3 className="text-2xl font-bold font-outfit flex items-center gap-2">
+            <div className="h-px flex-1 mx-6 bg-gradient-to-r from-white/10 to-transparent" />
+            <h3 className="text-2xl font-bold font-outfit flex text-center justify-center items-center gap-2">
               <Trophy className="text-yellow-500" size={24} />
               Papan Peringkat
             </h3>
             <div className="h-px flex-1 mx-6 bg-gradient-to-r from-white/10 to-transparent" />
           </div>
 
-          <div className="grid gap-3">
+          <div className="grid gap-3 overflow-y-scroll h-[40vh]">
             {leaderboard.length > 0 ? leaderboard.map((entry, i) => (
               <m.div
                 key={i}
