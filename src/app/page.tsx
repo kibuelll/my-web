@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import ProjectModal from "@/components/ProjectModal";
+import ChatBot from "@/components/ChatBot";
 
 // Lazy load heavy components — only loaded when needed
 const ThreeBackground = dynamic(() => import("@/components/ThreeBackground"), { ssr: false });
@@ -12,6 +13,7 @@ const GitLabCalendar = dynamic(() => import("@/components/GitlabActivity"), {
 });
 
 import HeroSection from "@/components/HeroSection";
+import Navbar from "@/components/Navbar";
 import AboutSection from "@/components/AboutSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import TechStackSection from "@/components/TechStackSection";
@@ -31,6 +33,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen selection:bg-primary selection:text-white relative">
+      <Navbar />
       {/* Render 3D background only on desktop to save mobile main thread */}
       {isDesktop && <ThreeBackground />}
 
@@ -58,6 +61,9 @@ export default function Home() {
       <footer className="py-12 border-t border-white/10 flex flex-col items-center gap-6">
         <p className="text-gray-500 text-sm">© {new Date().getFullYear()} My Portfolio. All rights reserved.</p>
       </footer>
+
+      {/* Floating AI Chatbot */}
+      <ChatBot />
     </main>
   );
 }

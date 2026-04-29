@@ -50,7 +50,7 @@ export default function HeroSection() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <a href="#stack" className="px-8 py-4 bg-secondary text-white font-medium rounded-full hover:bg-gradient-to-r hover:from-secondary hover:via-secondary/70 hover:to-primary transition-colors shadow-[0_0_20px_rgba(59,130,246,0.5)]">
+        <a href="#about" className="px-8 text-white py-4 bg-black/100 font-medium rounded-full hover:bg-gradient-to-r hover:from-secondary hover:via-secondary/70 hover:to-primary transition-colors shadow-[0_0_20px_rgba(59,130,246,0.5)]">
           Mulai Jelajah
         </a>
       </m.div>
